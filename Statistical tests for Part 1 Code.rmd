@@ -1,0 +1,64 @@
+---
+title: "Final Project - CS 111"
+author: "Minh Huyen Nguyen"
+date: "4/29/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Reading and cleaning the csv file of patients diagnosed with bladder cancer
+
+setwd("/Volumes/SHARED/WHITEDA/CS111-01/Assignment-Inbox/nguyen_m1/Final Project")
+library(readr)
+library(dplyr)
+bladder_patient <- read.csv("data_bcr_clinical_data_patient.csv", header = TRUE)
+names(bladder_patient)[names(bladder_patient) == 'AJCC_PATHOLOGIC_TUMOR_STAGE'] <- "Cancer_Stage"
+bladder_patient <- bladder_patient %>%
+  filter(Cancer_Stage != '[Not Available]')
+
+bladder_minnesota <- read.csv("Bladder - Minnesota.csv", header = TRUE)
+n <- dim(bladder_minnesota) [1]
+bladder_minnesota <- bladder_minnesota[1:(n-15),]
+```
+
+```{r}
+# Chi-square test for gender
+
+by_gender <- table(bladder_patient$GENDER)
+chisq.test(by_gender)
+```
+
+```{r}
+# Chi-square test for stage II, III, IV
+
+by_stage <- bladder_patient %>% 
+  select(Cancer_Stage) %>%
+  filter(Cancer_Stage == 'Stage II' | Cancer_Stage == 'Stage III' | Cancer_Stage == "Stage IV") %>%
+  group_by(Cancer_Stage) %>%
+  summarise(Freq = length(Cancer_Stage))
+
+chisq.test(by_stage$Freq)
+```
+
+```{r}
+# Two sample T.test for incident rate in male and female patients in Minnesota from 1988-2013
+
+names(bladder_minnesota)[names(bladder_minnesota) == "Incidence.rate..per.100000."] <- "Incidence_rate" 
+male <- bladder_minnesota %>%
+  filter(Sex == "Male")
+female <- bladder_minnesota %>%
+  filter(Sex == "Female")
+
+t.test(male$Incidence_rate, female$Incidence_rate)
+```
+
+```{r}
+# Regression test for relationship between the number of new cancer and total population in Minnesota from 1988-2013
+
+model <- lm(data=bladder_minnesota, Number.of.new.cancers ~ Population)
+summary(model)
+```
