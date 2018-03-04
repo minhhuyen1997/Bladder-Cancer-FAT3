@@ -38,3 +38,5 @@ Gao, J., et al. “Integrative Analysis of Complex Cancer Genomics and Clinical 
 Gene FAT3. Bethesda (MD): National Library of Medicine (US), National Center for Biotechnology Information. Available from: https://www.ncbi.nlm.nih.gov/gene/
 
 Ethan, C. et al. “The CBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data.” Cancer Discovery, vol. 2, no. 10, 2012, pp. 960–960., doi:10.1158/2159-8290.cd-12-0326.
+
+Minnesota Public Health Data Access. Minnesota Department of Health. Available from: https://apps.health.state.mn.us/mndata/
