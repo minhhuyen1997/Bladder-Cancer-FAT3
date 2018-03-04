@@ -1,4 +1,4 @@
-### History of bladder cancer in Minnesota 1988-2013 & Visualization of FAT3 gene and amino acids
+## History of bladder cancer in Minnesota 1988-2013 & Visualization of FAT3 gene and amino acids
 
 *Author: Minh Huyen Nguyen*
 
