@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 # Reading and cleaning the csv file of patients diagnosed with bladder cancer
-
-setwd("/Volumes/SHARED/WHITEDA/CS111-01/Assignment-Inbox/nguyen_m1/Final Project")
+# Setting working directory
 library(readr)
 library(dplyr)
 bladder_patient <- read.csv("data_bcr_clinical_data_patient.csv", header = TRUE)
