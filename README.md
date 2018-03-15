@@ -40,3 +40,6 @@ Gene FAT3. Bethesda (MD): National Library of Medicine (US), National Center for
 Ethan, C. et al. “The CBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data.” Cancer Discovery, vol. 2, no. 10, 2012, pp. 960–960., doi:10.1158/2159-8290.cd-12-0326.
 
 Minnesota Public Health Data Access. Minnesota Department of Health. Available from: https://apps.health.state.mn.us/mndata/
+
+Parts of the project based on "Discovering Computer Science: Interdisciplinary Problems, Principles, and Python Programming" 
+by Dr. Jessen Havill (Professor, Department of Computer Science & Mathematics - Denison University)
